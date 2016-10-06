@@ -2,13 +2,13 @@
 
 ## Task List
 
-* Followed page update
+* 1. Followed page update
 
-* `Login` & `Register` need to add into `index.html`
+* 2. `Login` & `Register` need to add into `index.html`
 
-* Page optimization （css, js, image, asset）
+* 3. Page optimization （css, js, image, asset）
 
-* Page Logo
+* 4. Page Logo
 
-* Back-End Service
+* 5. Back-End Service
 
