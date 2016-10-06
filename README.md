@@ -1,10 +1,9 @@
 # ForumPage
 
-## Page List
+## Task List
 
-* faculity --- 1
-* unitlist --- 2
-* postlist --- 3
-* post --- 4
-* followed page
+* Followed page update
+
+* `Login` & `Register` need to add into `index.html`
+
 
