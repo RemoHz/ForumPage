@@ -6,7 +6,7 @@
 
 2. `Login` & `Register` need to add into `index.html`
 
-3. Page optimization （css, js, image, asset）
+~~3. Page optimization （css, js, image, asset~~
 
 4. Page Logo
 
