@@ -1,3 +1,23 @@
+<?php
+    // include('session.php');
+    include('../config.php');
+
+    $facultyData = $_GET['facultyData'];
+    $unitData = $_GET['unitData'];
+    $postData = $_GET['postData'];
+    $postInfo = json_decode($postData);
+
+    $postID = $postInfo->postID;
+    $subject = $postInfo->subject;
+    $userName = $postInfo->userName;
+    $timeStamp = $postInfo->timeStamp;
+
+    $sql = "select * from post where postID=$postID";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result);
+
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -30,7 +50,7 @@
 					<ul>
 						<li class="logo-wrapper"><a href="../index.html"><img src="../img/mPurpose-logo.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
                         <li>
-							<a href="../pages/faculties.html">Faculties</a>
+							<a href="../pages/faculties.php">Faculties</a>
 						</li>
                         <li>
 							<a href="../pages/followersPage.html">FollowersPage</a>
@@ -45,7 +65,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h1><a href="../pages/postList.html" class="btn btn-grey btn-sm event-more">Back</a>&nbsp;&nbsp;&nbsp;Post Information</h1>
+						<h1><a href='<?php echo "../pages/postList.php?facultyData=".$facultyData."&unitData=".$unitData; ?>' class="btn btn-grey btn-sm event-more">Back</a>&nbsp;&nbsp;&nbsp; <?php echo $subject."&nbsp;&nbsp;&nbsp;- post by ".$userName; ?></h1>
 					</div>
 				</div>
 			</div>
@@ -57,10 +77,10 @@
 					<div class="col-md-12">
 						<div class="blog-post blog-single-post">
 							<div class="single-post-title">
-								<h3>Post Title</h3>
+								<h3><?php echo $subject; ?></h3>
 							</div>
 							<div class="single-post-info">
-								<i class="glyphicon glyphicon-time"></i>30 JAN, 2013 <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
+								<i class="glyphicon glyphicon-time"></i><?php echo $row['timeStamp']; ?> <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
 							</div>
 							<div class="single-post-image">
 								<img src="../img/blog-large.jpg" alt="Post Title">

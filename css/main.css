@@ -1104,10 +1104,14 @@ span.color-red {
 --------------------------------------------------------------------------*/
 .events-list {
   width: 100%;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 .events-list tr td {
   padding: 5px 20px 5px 0;
+}
+.events-list tr {
+      border-bottom: 1px solid #dcdcdd;
+    border-top: 1px solid #dcdcdd;
 }
 .events-list tr td:last-child {
   padding: 5px 0;
